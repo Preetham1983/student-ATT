@@ -1,0 +1,228 @@
+/* Global Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Attendance Page Layout */
+.attendance-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    padding: 15px;
+    width: 100%;
+}
+
+/* Card Styling */
+.card, .summary-card, .attendance-card, .subject-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 90%;  /* Adjusted for better responsiveness */
+    max-width: 1100px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Headings */
+h2 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* Form Styling */
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 90%; /* Larger width for smaller screens */
+    max-width: 400px;
+}
+
+.input {
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    width: 100%; /* Full width */
+}
+
+.button {
+    padding: 12px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+.button:hover {
+    background: #0056b3;
+}
+
+/* Error Message */
+.error {
+    color: red;
+    margin-top: 10px;
+}
+
+/* Table Container - Fixing Scroll Issue */
+.table-container {
+    width: 100%;
+    overflow-x: auto; /* Enables horizontal scrolling if needed */
+    margin-top: 20px;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    min-width: 600px; /* Ensures proper spacing */
+    border-collapse: collapse;
+    background: white;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    white-space: nowrap; /* Prevents text wrapping */
+}
+
+th {
+    background: #007bff;
+    color: white;
+}
+
+/* Attendance Status Colors */
+td.present {
+    background: #28a745;
+    color: white;
+}
+
+td.late {
+    background: #ffc107;
+    color: black;
+}
+
+td.absent {
+    background: #dc3545;
+    color: white;
+}
+
+/* Subject-wise Attendance */
+.subject-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.subject-card {
+    flex: 1 1 200px; /* Flexible width for smaller screens */
+    border-left: 5px solid;
+}
+
+/* Responsive Fixes */
+@media (max-width: 768px) {
+    .card, .summary-card, .attendance-card, .subject-card {
+        width: 95%; /* Adjusted for smaller screens */
+    }
+
+    th, td, .input, .button {
+        font-size: 14px;
+        padding: 8px;
+    }
+}
+
+/* Circle Design */
+.circle {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+
+.present .circle {
+    background-color: green;
+}
+
+.absent .circle {
+    background-color: red;
+}
+
+.late .circle {
+    background-color: orange;
+    color: black;
+}
+
+/* Adjust Circle Size for Mobile */
+@media (max-width: 768px) {
+    .circle {
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .circle {
+        width: 25px;
+        height: 25px;
+        line-height: 25px;
+        font-size: 16px;
+    }
+}
+
+.progress-container {
+    width: 100%;
+    height: 10px;
+    background: #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 10px 0;
+}
+
+.progress-bar {
+    height: 100%;
+    transition: width 0.5s ease-in-out;
+}
+
+.attendance-number {
+    font-size: 2em;  
+    font-weight: bold;
+    transition: color 1s ease;  
+    padding: 5px;  
+    border-radius: 5px;  
+}
+
+/* Dynamic Color Classes for Attendance */
+.green-text {
+    color: #28a745;  
+    background-color: rgba(40, 167, 69, 0.1);  
+}
+
+.orange-text {
+    color: #ffc107;  
+    background-color: rgba(255, 193, 7, 0.1);  
+}
+
+.red-text {
+    color: #dc3545;  
+    background-color: rgba(220, 53, 69, 0.1);  
+}
